@@ -22,14 +22,38 @@ public class WebResource {
 	Integer leng=	nullString.length();
 
 	}
-	public void resourceLeak() {
-        try (BufferedReader reader = new BufferedReader(new FileReader("somefile.txt"))) {
-            String line = reader.readLine();
-            System.out.println(line);
-            // Reader is not closed
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+	 public void resourceLeak() {
+	        BufferedReader reader = null;
+	        try {
+	            reader = new BufferedReader(new FileReader("somefile.txt"));
+	            String line = reader.readLine();
+	            System.out.println(line);
+	        } catch (IOException e) {
+	            e.printStackTrace(); // Use of System.out instead of a logger (Maintainability)
+	        } finally {
+	            // Resource not closed properly (Reliability)
+	        }
+	    }
+	 
+	 
+	 
+	 
+	 public void hardcodedPassword() {
+	        String password = "12345"; // Hardcoded password (Security)
+	        System.out.println("Password: " + password);
+	    }
+	 
+	 
+	 public void unusedVariable() {
+	        int unused = 42; // Unused variable (Maintainability)
+	    }
+	 
+	 
+	 public void largeMethod() {
+	        // Method too large, should be refactored (Maintainability)
+	        for (int i = 0; i < 100; i++) {
+	            System.out.println("This is a large method.");
+	        }
+	    }
 
 }
