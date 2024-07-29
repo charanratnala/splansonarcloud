@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class WebResource {
 	
 	@GetMapping("/getMessage")
-	public String get() {
-		return " Hloo mann !";
+	public void get() {
+	System.out.println("test");
 	}
 
 }
