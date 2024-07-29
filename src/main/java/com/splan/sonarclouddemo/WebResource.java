@@ -10,7 +10,7 @@ public class WebResource {
 	
 	@GetMapping("/getMessage")
 	public String get() {
-		return " Hii Sai how are you !";
+		return " Hloo mann !";
 	}
 
 }
