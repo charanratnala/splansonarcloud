@@ -17,7 +17,7 @@ public class WebResource {
 	public void Games_zone() {
 
 		String nullString = null;
-
+           // this wiil through exception
 		System.out.println(nullString.length());
 
 	}
