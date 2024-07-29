@@ -16,9 +16,10 @@ public class WebResource {
 	@GetMapping("/getMessage")
 	public void Games_zone() {
 
-		String nullString = null;
+		
            // this wiil through exception
-		System.out.println(nullString.length());
+		String nullString = null;
+	Integer leng=	nullString.length();
 
 	}
 	public void resourceLeak() {
